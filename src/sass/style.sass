@@ -1,6 +1,13 @@
 $blue-color: #1EACC7
+$second-blue-color: #1ca8c3
 $pink-color: #FF5656
 $dark-gray-color: #202020
+
+@mixin btn_hover
+    &:hover
+        background-image: none
+        background-color: $blue-color
+
 
 @font-face 
     font-family: 'Roboto - Light' 
@@ -16,14 +23,15 @@ $dark-gray-color: #202020
     font-family: 'Roboto', sans-serif 
 header 
     position: relative 
+    height: 50px
 nav 
+    position: fixed 
+    width: 100% 
     height: 50px 
     background-color: #212121 
-    width: 100% 
-    position: fixed 
-    top: 0 
-    z-index: 1 
+    z-index: 5
 .menu 
+
     display: flex 
     justify-content: space-between 
     padding: 13px 70px 
@@ -38,27 +46,28 @@ nav
         border-right: 2px dotted black 
         padding-right: 48px 
 .subheader 
+    top:50px    
     position: absolute 
     width: 100% 
     height: 84px 
     background-color: rgba(0,0,0,0.6) 
-    .subheader_logo 
+    &_logo 
         display: block 
         max-width: 100% 
         margin-top: 16px 
-    .subheader_official 
+    &_official 
         margin-top: 6px 
         opacity: 0.5 
         color: #FFF 
         font-size: 13px 
         font-weight: 400 
-    .subheader_call 
+    &_call 
         margin-top: 19px 
         color: #FFF 
         text-align: right 
         font-size: 12px 
         font-weight: 300 
-    .subheader_phone 
+    &_phone 
         display: block 
         margin-top: 8px 
         color: #FFF 
@@ -68,7 +77,7 @@ nav
         text-transform: uppercase 
         text-decoration: none 
         line-height: 12px 
-    .subheader_btn 
+    &_btn 
         margin-top: 19px 
         width: 172px 
         height: 46px 
@@ -84,11 +93,12 @@ nav
         font-weight: 400 
         line-height: 46px 
         text-transform: uppercase 
+        @include btn_hover
 .promo 
     min-height: 800px 
     background: url('../img/backgrounds/uber_bg.png') center center/ cover no-repeat 
     padding: 150px 0 135px 0 
-    .promo_header 
+    &_header 
         color: #FFF 
         font-size: 60px 
         font-weight: 700 
@@ -96,7 +106,7 @@ nav
         text-transform: uppercase 
         margin: 0 
         text-align: center 
-    .promo_subheader 
+    &_subheader 
         color: #FFF 
         font-size: 36px 
         font-weight: 700 
@@ -105,14 +115,14 @@ nav
         margin: 0 
         margin-top: 22px 
         text-align: center 
-    .promo_descr 
+    &_descr 
         margin-top: 23px 
         color: #FFF 
         text-align: center 
         font-size: 18px 
         font-weight: 400 
         line-height: 24px 
-    .promo_btn 
+    &_btn 
         display: block 
         margin: 118px auto 0 auto 
         width: 259px 
@@ -129,6 +139,7 @@ nav
         font-weight: 400 
         line-height: 46px 
         text-transform: uppercase 
+        @include btn_hover
 .label 
         width: min-content 
         padding: 5px 10px 
@@ -149,14 +160,14 @@ nav
         margin-top: 41px 
 .motivational_part 
     padding: 71px 0 65px 0
-    .motivational_block 
+    &_block 
         min-height: 190px 
         font-size: 17px 
         margin-top: 35px 
         display: flex 
         align-items: center 
         justify-content: center 
-        .motivational_icon 
+        &_icon 
             height: 113px 
             width: 113px 
             display: flex 
@@ -167,7 +178,7 @@ nav
             padding: 60px 
             margin-right: 26px 
             float: left 
-        .motivational_descr 
+        &_descr 
             overflow: hidden 
             width: 343px 
             span 
@@ -225,6 +236,26 @@ nav
             margin: 0 auto
             border-radius: 100%
             cursor: pointer
+            &::before
+                content:''
+                display: block
+                width: 14px
+                height: 2px
+                background-color: $blue-color
+                transition: 0.3s all
+            &:after
+                content:''
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+                display: block
+                height: 14px
+                width: 2px
+                background-color: $blue-color
+                transition: 0.3s all
+            &:hover
+                &:before, &::after
+                    background-color: $pink-color
 
 .automobile
     min-height: 898px
@@ -247,3 +278,145 @@ nav
         text-align: center
         font-size: 17px
         line-height: 24px
+
+.require
+    padding: 68px 0 84px 0
+    &_block
+        margin: 33px 0
+        &_nmb
+            margin-bottom: 0px
+    &_title
+        color: $second-blue-color
+        font-size: 22px
+        font-weight: 400
+    &_list
+        list-style-type: none
+        padding-left: 50px
+        margin-top: 22px
+        li
+            position: relative 
+            font-size: 17px
+            font-weight: 300
+            line-height: 24px
+            margin-bottom: 10px
+            &:before
+                content:''
+                display: block
+                position: absolute
+                left: -32px
+                top: 3px
+                width: 21px
+                height: 20px
+                background: url('../icons/check-buttons/blue.png') center (center/ cover) no-repeat
+    &_descr
+            margin-top: 25px
+            font-size: 17px
+            font-weight: 300
+            line-heigth: 24px
+            color: $second-blue-color
+    .warning
+        .require_title
+            color: $pink-color 
+        .require_list
+            li
+                &:before
+                    background: url('../icons/check-buttons/red.png') center (center / cover) no-repeat
+
+.whole_world
+    text-align: center
+    position: relative
+    height: 740px
+    padding: 51px 0 22px 0
+    background: url('../img/backgrounds/world_bg.png') center (center / cover) no-repeat          
+    .label
+        background-color: #fff
+        color:#000
+        width: 100px
+    .title
+        color: #fff
+    .subtitle
+        color: #fff
+    .view_ref
+        position: absolute
+        bottom: 21px
+        left: 50% 
+        transform: translateX(-50%)
+        a
+            color: #1FBAD6
+            text-decoration: none
+            text-align: center
+            font-size: 15px
+            font-weight: 400
+            text-transform: uppercase 
+    
+
+footer 
+    padding: 14px 23px 39px 23px
+    a 
+        &:hover 
+            text-decoration: none
+.footer
+    &_divider
+        width: 299px
+        height: 4px
+        background-color: #1fbad6
+        margin: 0 auto
+    &_wrapper
+        display: flex 
+        justify-content: space-between
+        align-items: flex-start
+        padding-top: 32px
+    &_wrapper > div 
+        width: 33%
+        &:nth-child(3)
+            display: flex 
+            justify-content: flex-end
+    &_social
+        width: 80px
+        display: flex
+        &_block
+            display: flex 
+            justify-content: center
+            align-items: center
+            margin: 0 4px 
+            width: 32px
+            height: 32px
+            background-color: #070716
+            border-radius: 100%
+            margin-right: 20px
+            i 
+                color: #fff
+    &_links
+        width: 390px
+        margin: 0 auto
+        &_main 
+            display: flex 
+            justify-content: space-between
+            padding: 0 10px
+            a 
+                color: #070716
+                font-size: 15px
+                font-weight: 300
+                text-transform: uppercase
+                text-decoration: none
+        &_sub 
+            display: flex 
+            justify-content: space-between
+            margin-top: 10px
+            a 
+                color: #999999
+                font-size: 11px
+                font-weight: 300
+                text-transform: uppercase
+                text-decoration: none
+        &_lang 
+            display: block 
+            margin: 0 auto
+            color: #1fbad6
+            font-size: 11px
+            font-weight: 400
+            margin-top: 19px
+            text-transform: uppercase
+            text-align: center
+            a
+                text-decoration: none
