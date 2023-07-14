@@ -141,33 +141,33 @@ nav
         text-transform: uppercase 
         @include btn_hover
 .label 
-        width: min-content 
-        padding: 5px 10px 
-        text-align: center 
-        margin: 0 auto 
-        color: #fff 
-        font-size: 13px 
-        background-color: #000 
-        text-transform: uppercase 
+    width: min-content 
+    padding: 5px 10px 
+    text-align: center 
+    margin: 0 auto 
+    color: #fff 
+    font-size: 13px 
+    background-color: #000 
+    text-transform: uppercase 
 .title
-        color: #222 
-        text-align: center 
-        font-size: 38px 
-        font-style: normal 
-        font-weight: 700 
-        line-height: 48px 
-        text-transform: uppercase 
-        margin-top: 41px 
+    color: #222 
+    text-align: center 
+    font-size: 38px 
+    font-style: normal 
+    font-weight: 700 
+    line-height: 48px 
+    text-transform: uppercase 
+    margin-top: 41px 
 .motivational_part 
     padding: 71px 0 65px 0
-    &_block 
+    .motivational_block 
         min-height: 190px 
         font-size: 17px 
         margin-top: 35px 
         display: flex 
         align-items: center 
         justify-content: center 
-        &_icon 
+        .motivational_icon 
             height: 113px 
             width: 113px 
             display: flex 
@@ -178,7 +178,7 @@ nav
             padding: 60px 
             margin-right: 26px 
             float: left 
-        &_descr 
+        .motivational_descr 
             overflow: hidden 
             width: 343px 
             span 
@@ -372,7 +372,7 @@ footer
             display: flex 
             justify-content: flex-end
     &_social
-        width: 80px
+        width: 160px
         display: flex
         &_block
             display: flex 
@@ -383,7 +383,6 @@ footer
             height: 32px
             background-color: #070716
             border-radius: 100%
-            margin-right: 20px
             i 
                 color: #fff
     &_links

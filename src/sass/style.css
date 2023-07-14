@@ -193,7 +193,7 @@ nav {
 .motivational_part {
   padding: 71px 0 65px 0;
 }
-.motivational_part_block {
+.motivational_part .motivational_block {
   min-height: 190px;
   font-size: 17px;
   margin-top: 35px;
@@ -207,7 +207,7 @@ nav {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.motivational_part_block_icon {
+.motivational_part .motivational_block .motivational_icon {
   height: 113px;
   width: 113px;
   display: -webkit-box;
@@ -225,11 +225,11 @@ nav {
   margin-right: 26px;
   float: left;
 }
-.motivational_part_block_descr {
+.motivational_part .motivational_block .motivational_descr {
   overflow: hidden;
   width: 343px;
 }
-.motivational_part_block_descr span {
+.motivational_part .motivational_block .motivational_descr span {
   color: #1EACC7;
 }
 
@@ -479,7 +479,7 @@ footer a:hover {
           justify-content: flex-end;
 }
 .footer_social {
-  width: 80px;
+  width: 160px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -499,7 +499,6 @@ footer a:hover {
   height: 32px;
   background-color: #070716;
   border-radius: 100%;
-  margin-right: 20px;
 }
 .footer_social_block i {
   color: #fff;
