@@ -9,6 +9,9 @@
     src: url("../fonts/Roboto-Regular.ttf") format("truetype") 
     font-weight: 400 
 
+.hidden-title, .hidden-subtitle
+    display: block
+
 header 
     position: relative 
     height: 50px
@@ -365,6 +368,7 @@ nav
     &_wrapper > div 
         width: 33%
         &:nth-child(3)
+            width: 100%
             display: flex 
             justify-content: flex-end
     &_social
